@@ -21,10 +21,16 @@ Stylesheet: Navigation Stylesheet
 		.vcu-logo {
 			max-width: 400px;
 			margin-bottom: 2em;
+			@include breakpoint($breakpoint-mobile) {
+				max-width: 200px;
+			}
 		}
 		.hero-text {
 			font-size: 3em;
 			color: $white;
+			@include breakpoint($breakpoint-mobile) {
+				font-size: 1.75em;
+			}
 		}
 		&__title {
 

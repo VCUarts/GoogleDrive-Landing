@@ -76,7 +76,7 @@
 	/* trigger when page is ready */
 	$(document).ready(function (){
 
-		 $.backstretch("./assets/img/print-wall.jpg");
+		 $.backstretch("./assets/img/horses-horses.jpg");
 
 	});
 

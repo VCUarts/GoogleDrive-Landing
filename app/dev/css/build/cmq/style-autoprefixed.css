@@ -998,14 +998,14 @@ Stylesheet: Navigation Stylesheet
 	margin-bottom: 2em;
 }
 
-/* line 25, ../scss/modules/_article.scss */
+/* line 28, ../scss/modules/_article.scss */
 
 .article__section .hero-text {
 	font-size: 3em;
 	color: white;
 }
 
-/* line 34, ../scss/modules/_article.scss */
+/* line 40, ../scss/modules/_article.scss */
 
 .article button a {
 	text-decoration: none;
@@ -1074,6 +1074,22 @@ Use this for testing
 
 #mobile-nav-button {
 	display: none;
+}
+
+}
+
+@media (max-width: 767px) {
+
+/* line 21, ../scss/modules/_article.scss */
+
+.article__section .vcu-logo {
+	max-width: 200px;
+}
+
+/* line 28, ../scss/modules/_article.scss */
+
+.article__section .hero-text {
+	font-size: 1.75em;
 }
 
 }
