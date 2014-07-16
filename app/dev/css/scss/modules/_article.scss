@@ -37,6 +37,12 @@ Stylesheet: Navigation Stylesheet
 		}
 	}
 	button {
+		margin-bottom: 2em;
+		&:first-of-type {
+			@include breakpoint($breakpoint-desktop) {
+				margin-right: 2em;
+			}
+		}
 		a {
 			text-decoration: none;
 		}

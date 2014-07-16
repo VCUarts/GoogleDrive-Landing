@@ -801,7 +801,17 @@ Stylesheet: Navigation Stylesheet
     font-size: 1.75em;
   }
 }
-/* line 40, ../scss/modules/_article.scss */
+/* line 39, ../scss/modules/_article.scss */
+.article button {
+  margin-bottom: 2em;
+}
+@media (min-width: 768px) {
+  /* line 41, ../scss/modules/_article.scss */
+  .article button:first-of-type {
+    margin-right: 2em;
+  }
+}
+/* line 46, ../scss/modules/_article.scss */
 .article button a {
   text-decoration: none;
 }
@@ -816,9 +826,8 @@ Stylesheet: Footer Stylesheet
 /* line 9, ../scss/modules/_footer.scss */
 .footer {
   color: white;
-  margin-top: 2em;
 }
-/* line 14, ../scss/modules/_footer.scss */
+/* line 13, ../scss/modules/_footer.scss */
 .footer__inner {
   max-width: 1200px;
   margin-left: auto;
