@@ -994,18 +994,18 @@ Stylesheet: Navigation Stylesheet
 /* line 21, ../scss/modules/_article.scss */
 
 .article__section .vcu-logo {
-	max-width: 400px;
-	margin-bottom: 2em;
+	max-width: 200px;
+	margin-bottom: 1.35em;
 }
 
-/* line 28, ../scss/modules/_article.scss */
+/* line 25, ../scss/modules/_article.scss */
 
 .article__section .hero-text {
 	font-size: 3em;
 	color: white;
 }
 
-/* line 40, ../scss/modules/_article.scss */
+/* line 37, ../scss/modules/_article.scss */
 
 .article button a {
 	text-decoration: none;
@@ -1080,13 +1080,7 @@ Use this for testing
 
 @media (max-width: 767px) {
 
-/* line 21, ../scss/modules/_article.scss */
-
-.article__section .vcu-logo {
-	max-width: 200px;
-}
-
-/* line 28, ../scss/modules/_article.scss */
+/* line 25, ../scss/modules/_article.scss */
 
 .article__section .hero-text {
 	font-size: 1.75em;

@@ -19,11 +19,8 @@ Stylesheet: Navigation Stylesheet
 	&__section {
 		margin-top: 10em;
 		.vcu-logo {
-			max-width: 400px;
-			margin-bottom: 2em;
-			@include breakpoint($breakpoint-mobile) {
-				max-width: 200px;
-			}
+			max-width: 200px;
+			margin-bottom: 1.35em;
 		}
 		.hero-text {
 			font-size: 3em;
