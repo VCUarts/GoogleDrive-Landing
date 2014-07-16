@@ -8,13 +8,14 @@ Stylesheet: Footer Stylesheet
 
 .footer {
 
-	background: $black;
 	color: $white;
-
+  margin-top: 2em;
+  
 	&__inner {
 
 		@include container($wrapper-width);
 		padding: 1em 0;
+    text-align: center;
 
 		@at-root .copyright {
 

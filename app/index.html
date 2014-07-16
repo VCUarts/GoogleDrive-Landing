@@ -65,19 +65,19 @@
 	<meta property="og:url" content="" />
 	<meta property="og:image" content="" />
 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-<img alt="full screen background image" src="assets/img/print-wall.jpg" id="full-screen-background-image" /> 
-
 <main id="main">
 	<article class="article">
 		<header class="article__header">
-			<h2 class="article__title">google drive</h2>
+			<img src="./assets/img/google-drive.png" alt="Google Drive">
 		</header>
 		<section class="article__section">
-			<p>All your files, ready where you are</p>
+			<img src="./assets/img/VCU.svg" class="vcu-logo" onerror="this.onerror=null; this.src='./assets/img/VCU.png'">
+			<p class="hero-text">All your files, ready where you are</p>
 		</section>
 		<button><a href="https://drive.google.com/a/mymail.vcu.edu/#my-drive">Your Google Drive</a></button>
 	</article>
@@ -85,14 +85,14 @@
 
 <footer class="footer">
 	<div class="footer__inner">
-		<small class="copyright">&copy; 2014 Site Title</small>
+		<small class="copyright">Click <a href="https://sites.google.com/a/vcu.edu/appsforvcu/drive">here</a> for more information</small>
 	</div>
 </footer>
 
 
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 <script src="assets/js/footer.min.js"></script>
-
 
 <!-- DELETE SCRIPTS BELOW FOR PRODUCTION -->
 
@@ -100,9 +100,9 @@
 <script src="//localhost:35729/livereload.js"></script>
 
 <!-- scripts to reload browser on css changes, replace with correct port numbers -->
-<script src='//10.70.12.76:3000/socket.io/socket.io.js'></script>
-<script>var ___socket___ = io.connect('http://10.70.12.76:3000');</script>
-<script src='//10.70.12.76:3001/client/browser-sync-client.0.8.2.js'></script>
+<script src='//172.23.6.126:3000/socket.io/socket.io.js'></script>
+<script>var ___socket___ = io.connect('http://172.23.6.126:3000');</script>
+<script src='//172.23.6.126:3001/client/browser-sync-client.0.8.2.js'></script>
 
 
 </body>

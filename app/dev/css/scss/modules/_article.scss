@@ -7,17 +7,32 @@ Stylesheet: Navigation Stylesheet
 ******************************************************************/
 
 .article {
-	
+	text-align: center;
+	padding: 0 1.5em;
 	&__header {
-		
+		padding: 2em 0;
+		text-align: left;
 	}
 	&__title {
 		
 	}
 	&__section {
-
+		margin-top: 10em;
+		.vcu-logo {
+			max-width: 400px;
+			margin-bottom: 2em;
+		}
+		.hero-text {
+			font-size: 3em;
+			color: $white;
+		}
 		&__title {
 
+		}
+	}
+	button {
+		a {
+			text-decoration: none;
 		}
 	}
 }

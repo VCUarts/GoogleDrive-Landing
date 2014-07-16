@@ -5,7 +5,7 @@ Stylesheet: Normalize Typography
 ******************************************************************/
 
 // Set these to be used across your stylesheets
-$sans-serif: sans-serif;
+$sans-serif: 'Open Sans', sans-serif;
 $serif: serif;
 
 // Set the default font family here so you don't have to override it later
@@ -15,7 +15,7 @@ $base-line-height: 1.5em;
 
 // Pretty text
 // may cause text heavy sites to run slow
-$pretty-text: false !default;
+$pretty-text: true !default;
 $pretty-headers: true !default; //can be false if $pretty-text is true
 
 %pretty-text {

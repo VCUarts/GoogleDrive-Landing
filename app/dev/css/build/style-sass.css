@@ -95,7 +95,11 @@ Stylesheet: Normalize Typography
 
 ******************************************************************/
 /* line 21, ../scss/normalize/_typography.scss */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+html,
+button,
+input,
+select,
+textarea, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -116,12 +120,12 @@ input,
 select,
 textarea {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* line 48, ../scss/normalize/_typography.scss */
 a {
-  color: skyblue;
+  color: white;
 }
 /* line 53, ../scss/normalize/_typography.scss */
 a:focus {
@@ -130,7 +134,7 @@ a:focus {
 /* line 57, ../scss/normalize/_typography.scss */
 a:hover, a:active {
   outline: 0;
-  color: #60bee4;
+  color: #e8e8e8;
 }
 
 /* line 64, ../scss/normalize/_typography.scss */
@@ -329,14 +333,14 @@ input[type="reset"],
 input[type="submit"] {
   padding: 1em 2em;
   color: white;
-  background: skyblue;
+  background: #466dd1;
 }
 /* line 11, ../scss/normalize/_forms.scss */
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background: #5bbce4;
+  background: #2d54b7;
 }
 
 /* line 18, ../scss/normalize/_forms.scss */
@@ -682,7 +686,7 @@ Stylesheet: Base Stylesheet
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
 #main:after {
   content: " ";
   display: block;
@@ -698,18 +702,6 @@ html, body {
 }
 
 /* line 31, ../scss/_base.scss */
-#full-screen-background-image {
-  z-index: -999;
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-/* line 42, ../scss/_base.scss */
 #wrapper {
   position: relative;
   width: 800px;
@@ -738,7 +730,7 @@ Stylesheet: Header Stylesheet
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
 .header__inner:after {
   content: " ";
   display: block;
@@ -773,6 +765,35 @@ Author:
 Stylesheet: Navigation Stylesheet
 
 ******************************************************************/
+/* line 9, ../scss/modules/_article.scss */
+.article {
+  text-align: center;
+  padding: 0 1.5em;
+}
+/* line 12, ../scss/modules/_article.scss */
+.article__header {
+  padding: 2em 0;
+  text-align: left;
+}
+/* line 19, ../scss/modules/_article.scss */
+.article__section {
+  margin-top: 10em;
+}
+/* line 21, ../scss/modules/_article.scss */
+.article__section .vcu-logo {
+  max-width: 400px;
+  margin-bottom: 2em;
+}
+/* line 25, ../scss/modules/_article.scss */
+.article__section .hero-text {
+  font-size: 3em;
+  color: white;
+}
+/* line 34, ../scss/modules/_article.scss */
+.article button a {
+  text-decoration: none;
+}
+
 /******************************************************************
 Site Name: 
 Author: 
@@ -782,8 +803,8 @@ Stylesheet: Footer Stylesheet
 ******************************************************************/
 /* line 9, ../scss/modules/_footer.scss */
 .footer {
-  background: #333333;
   color: white;
+  margin-top: 2em;
 }
 /* line 14, ../scss/modules/_footer.scss */
 .footer__inner {
@@ -791,8 +812,9 @@ Stylesheet: Footer Stylesheet
   margin-left: auto;
   margin-right: auto;
   padding: 1em 0;
+  text-align: center;
 }
-/* line 12, ../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
 .footer__inner:after {
   content: " ";
   display: block;

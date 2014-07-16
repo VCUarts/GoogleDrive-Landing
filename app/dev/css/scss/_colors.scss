@@ -11,15 +11,15 @@ Stylesheet: Color Constants
 COLORS
 *********************/
 
-$black:  #333;
-$grey:   #999;
-$white:  #fff;
-
+$black:   #333;
+$grey:    #999;
+$white:   #fff;
+$blue:    #466DD1;
 
 // used in normalize typography
 $background: $white;
 $text-color: $black;
-$link-color: skyblue;
+$link-color: $white;
 $link-hover: darken($link-color, 9%);
 $base-border-color: #ddd;
 

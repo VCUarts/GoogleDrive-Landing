@@ -7,9 +7,9 @@ Stylesheet: Normalize Forms
 %button {
 	padding: 1em 2em;
 	color: white;
-	background: skyblue;
+	background: $blue;
 	&:hover {
-		background: darken(skyblue, 10);
+		background: darken($blue, 10);
 	}
 }
 

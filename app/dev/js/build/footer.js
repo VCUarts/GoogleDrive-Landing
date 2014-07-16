@@ -76,7 +76,7 @@
 	/* trigger when page is ready */
 	$(document).ready(function (){
 
-		// your functions go here
+		 $.backstretch("./assets/img/print-wall.jpg");
 
 	});
 
