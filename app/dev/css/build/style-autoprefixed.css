@@ -841,23 +841,29 @@ Stylesheet: Navigation Stylesheet
 .article__section {
   margin-top: 10em;
 }
-/* line 21, ../scss/modules/_article.scss */
+@media (max-width: 767px) {
+  /* line 19, ../scss/modules/_article.scss */
+  .article__section {
+    margin-top: 1em;
+  }
+}
+/* line 24, ../scss/modules/_article.scss */
 .article__section .vcu-logo {
   max-width: 150px;
   margin-bottom: 1.35em;
 }
-/* line 25, ../scss/modules/_article.scss */
+/* line 28, ../scss/modules/_article.scss */
 .article__section .hero-text {
   font-size: 3em;
   color: white;
 }
 @media (max-width: 767px) {
-  /* line 25, ../scss/modules/_article.scss */
+  /* line 28, ../scss/modules/_article.scss */
   .article__section .hero-text {
     font-size: 1.75em;
   }
 }
-/* line 37, ../scss/modules/_article.scss */
+/* line 40, ../scss/modules/_article.scss */
 .article button a {
   text-decoration: none;
 }
