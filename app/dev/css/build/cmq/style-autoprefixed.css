@@ -994,7 +994,7 @@ Stylesheet: Navigation Stylesheet
 /* line 21, ../scss/modules/_article.scss */
 
 .article__section .vcu-logo {
-	max-width: 200px;
+	max-width: 150px;
 	margin-bottom: 1.35em;
 }
 
