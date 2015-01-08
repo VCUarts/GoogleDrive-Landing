@@ -106,8 +106,8 @@ textarea, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 /* line 27, ../scss/normalize/_typography.scss */
 html {
-  background: white;
-  color: #333333;
+  background: #fff;
+  color: #333;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   overflow-y: scroll;
@@ -125,7 +125,7 @@ textarea {
 
 /* line 48, ../scss/normalize/_typography.scss */
 a {
-  color: white;
+  color: #fff;
 }
 /* line 53, ../scss/normalize/_typography.scss */
 a:focus {
@@ -175,7 +175,7 @@ h6 {
 
 /* line 101, ../scss/normalize/_typography.scss */
 h1 a, h1 a:hover, .h1 a, .h1 a:hover, h2 a, h2 a:hover, .h2 a, .h2 a:hover, h3 a, h3 a:hover, .h3 a, .h3 a:hover, h4 a, h4 a:hover, .h4 a, .h4 a:hover, h5 a, h5 a:hover, .h5 a, .h5 a:hover {
-  color: #333333;
+  color: #333;
   text-decoration: none;
 }
 
@@ -279,7 +279,7 @@ del {
 
 /* line 208, ../scss/normalize/_typography.scss */
 abbr, acronym {
-  border-bottom: 1px dotted #dddddd;
+  border-bottom: 1px dotted #ddd;
   cursor: help;
 }
 
@@ -305,7 +305,7 @@ q:after {
 
 /* line 230, ../scss/normalize/_typography.scss */
 blockquote {
-  border-left: 2px solid #dddddd;
+  border-left: 2px solid #ddd;
   color: #595959;
   margin: 1.5em 0;
   padding-left: 0.75em;
@@ -333,7 +333,7 @@ input[type="reset"],
 input[type="submit"] {
   padding: 1em 2em;
   color: white;
-  background: #466dd1;
+  background: #466DD1;
 }
 /* line 11, ../scss/normalize/_forms.scss */
 button:hover,
@@ -345,7 +345,7 @@ input[type="submit"]:hover {
 
 /* line 18, ../scss/normalize/_forms.scss */
 fieldset {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   background: #f7f7f7;
   margin: 0 0 0.75em 0;
   padding: 1.5em;
@@ -438,7 +438,7 @@ textarea,
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 select[multiple=multiple] {
   background-color: white;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   margin-bottom: 0.75em;
   padding: 0.5em 0.5em;
   transition: 0.2s;
@@ -512,7 +512,7 @@ th {
 
 /* line 22, ../scss/normalize/_tables.scss */
 td {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   padding: 0.75em 0;
 }
 
@@ -626,48 +626,36 @@ Stylesheet: Animations Stylesheet
 
 ******************************************************************/
 @keyframes slideIn {
-  /* line 10, ../scss/_animations.scss */
   from {
     margin-left: -100%;
   }
-
-  /* line 14, ../scss/_animations.scss */
   to {
     margin-left: 0;
   }
 }
 @keyframes fadeIn {
-  /* line 20, ../scss/_animations.scss */
   from {
     opacity: 0;
   }
-
-  /* line 23, ../scss/_animations.scss */
   to {
     opacity: 1;
   }
 }
 @keyframes fadeInSlideDown {
-  /* line 29, ../scss/_animations.scss */
   from {
     opacity: 0;
     transform: translate(0, -10px);
   }
-
-  /* line 33, ../scss/_animations.scss */
   to {
     opacity: 1;
     transform: translate(0, 0);
   }
 }
 @keyframes fadeInSlideUp {
-  /* line 40, ../scss/_animations.scss */
   from {
     opacity: 0;
     transform: translate(0, 10px);
   }
-
-  /* line 44, ../scss/_animations.scss */
   to {
     opacity: 1;
     transform: translate(0, 0);
@@ -686,7 +674,7 @@ Stylesheet: Base Stylesheet
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 #main:after {
   content: " ";
   display: block;
@@ -730,7 +718,7 @@ Stylesheet: Header Stylesheet
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .header__inner:after {
   content: " ";
   display: block;
@@ -793,7 +781,7 @@ Stylesheet: Navigation Stylesheet
 /* line 28, ../scss/modules/_article.scss */
 .article__section .hero-text {
   font-size: 3em;
-  color: white;
+  color: #fff;
 }
 @media (max-width: 767px) {
   /* line 28, ../scss/modules/_article.scss */
@@ -825,7 +813,7 @@ Stylesheet: Footer Stylesheet
 ******************************************************************/
 /* line 9, ../scss/modules/_footer.scss */
 .footer {
-  color: white;
+  color: #fff;
 }
 /* line 13, ../scss/modules/_footer.scss */
 .footer__inner {
@@ -835,7 +823,7 @@ Stylesheet: Footer Stylesheet
   padding: 1em 0;
   text-align: center;
 }
-/* line 12, ../../../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .footer__inner:after {
   content: " ";
   display: block;

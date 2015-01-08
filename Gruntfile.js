@@ -7,10 +7,8 @@ module.exports = function(grunt) {
         compass: {
           dist: {
             options: {
-              cssDir: 'app/dev/css/build',
-              sassDir: 'app/dev/css/scss',
-              imagesDir: 'app/dev/css/img',
-              javascriptsDir: 'app/dev/js',
+              cssDir: 'app/css',
+              sassDir: 'app/scss',
               environment: 'development',
               relativeAssets: true,
               outputStyle: 'expanded',
@@ -20,10 +18,46 @@ module.exports = function(grunt) {
           }
         },
 
+        watch: {
+            scss: {
+              files: ['app/scss/**/*.scss'],
+              tasks: ['compass']
+            },
+            css: {
+                files: ['app/css/**/*.css']
+            },
+            js: {
+                files: ['app/js/**/*.js','!app/js/main.js'],
+                tasks: ['concat']
+            },
+            html: {
+                files: ['app/include/**/*.html'],
+                tasks: ['includes:dev']
+            },
+            livereload: {
+                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'],
+                options: { livereload: true }
+            }
+        },
+
+
+        browserSync: {
+            bsFiles: {
+                src : 'app/css/style.css'
+            },
+            options: {
+                watchTask: true, // < VERY important
+                server: {
+                    baseDir: "./app/"
+                }
+            }
+        },
+
+
         autoprefixer: {
             dist: {
                 files: {
-                    'app/dev/css/build/style-autoprefixed.css' : 'app/dev/css/build/style-sass.css'
+                    'build/css/style.css' : 'app/css/style.css'
                 }
             }
         },
@@ -31,7 +65,7 @@ module.exports = function(grunt) {
         cmq: {
             your_target: { 
                 files: {
-                    'app/dev/css/build/cmq' : 'app/dev/css/build/style-autoprefixed.css'
+                    'build/css/style.css' : 'build/css/style.css'
                 }
             }
         },
@@ -39,89 +73,139 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'app/assets/css/style.css': ['app/dev/css/build/cmq/style-autoprefixed.css']
+                    'build/css/style.css': ['build/css/style.css']
                 }
-            }
-        },
-
-        browserSync: {
-            files: {
-                src : 'app/assets/css/style.css'
             }
         },
 
         jshint: {
             all: [
-                'app/dev/js/footer/*.js',
-                'app/dev/js/header/*.js',
+                'app/js/*.js'
             ],
             options: {
-                jshintrc: 'app/dev/js/.jshintrc'
+                jshintrc: 'app/js/.jshintrc'
             }
         },
 
         concat: {   
-            footer: {
+            scripts: {
                 src: [
-                    'app/dev/js/footer/libs/*.js', // All JS in the libs folder
-                    'app/dev/js/footer/footer.js'  // This specific file
+                    'app/js/scripts/libs/*.js', // All JS in the libs folder
+                    'app/js/scripts/scripts.js'  // This specific file
                 ],
-                dest: 'app/dev/js/build/footer.js',
-            },
-            header: {
-                src: [
-                    'app/dev/js/header/libs/*.js', // All JS in the libs folder
-                    'app/dev/js/header/header.js'  // This specific file
-                ],
-                dest: 'app/dev/js/build/header.js',
+                dest: 'app/js/main.js',
             }
         },
 
         uglify: {
-            footer: {
-                src: 'app/dev/js/build/footer.js',
-                dest: 'app/assets/js/footer.min.js'
+            scripts: {
+                src: 'app/js/main.js',
+                dest: 'build/js/main.js'
             },
-            header: {
-                src: 'app/dev/js/build/header.js',
-                dest: 'app/assets/js/header.min.js'
+            modernizr: {
+                src: 'app/js/modernizr.2.8.3.min.js',
+                dest: 'build/js/modernizr.2.8.3.min.js'
             }
         },
 
-        watch: {
-            scss: {
-                files: ['app/dev/css/scss/**/*.scss'],
-                tasks: ['default']
+        htmlmin: {                                     // Task
+          dist: {                                      // Target
+            options: {                                 // Target options
+              removeComments: true,
+              collapseWhitespace: true
             },
-            css: {
-                files: ['app/assets/css/**/*.css']
-            },
-            js: {
-                files: ['app/dev/js/**/*'],
-                tasks: ['concat', 'uglify']
-            },
-            livereload: {
-                files: ['app/**/*.html', 'app/**/*.php', 'app/**/*.js', 'app/**/*.css'], // add files to watch to trigger a reload
-                options: { livereload: true }
+            files: [{                                   // Dictionary of files
+                expand: true,     // Enable dynamic expansion.
+                cwd: 'build/',      // Src matches are relative to this path.
+                src: ['**/*.html'], // Actual pattern(s) to match.
+                dest: 'build/',   // Destination path prefix.
+                ext: '.html',   // Dest filepaths will have this extension.
+            }]
+          }
+        },
+
+        // Build the site using grunt-includes
+        includes: {
+          dev: {
+            cwd: 'app/include',
+            src: [ '*.html' ],
+            dest: 'app/',
+            options: {
+              flatten: true,
+              includePath: 'app/include/parts'
             }
+          },
+          build: {
+            cwd: 'app/include',
+            src: [ '*.html' ],
+            dest: 'build/',
+            options: {
+              flatten: true,
+              includePath: 'app/include/parts'
+            }
+          }
         },
 
         imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'app/dev/img/',
+                    cwd: 'app/img/',
                     src: ['**/*.{png,jpg,gif,svg,ico}'],
-                    dest: 'app/assets/img/'
+                    dest: 'build/img/'
                 }]
             }
         },
 
-        clean: {
-            test: [
-                'app/assets/img/*' //uncomment to clean img dir too
-            ]
+        devcode : {
+          options :
+          {
+            html: true,        // html files parsing?
+            js: true,          // javascript files parsing?
+            css: true,         // css files parsing?
+            clean: true,       // removes devcode comments even if code was not removed
+            block: {
+              open: 'devcode', // with this string we open a block of code
+              close: 'endcode' // with this string we close a block of code
+            },
+            dest: 'dist'       // default destination which overwrites environment variable
+          },
+          dist : {             // settings for task used with 'devcode:dist'
+            options: {
+                source: 'build/',
+                dest: 'build/',
+                env: 'production',
+                block: {
+                  open: 'devcode', // with this string we open a block of code
+                  close: 'endcode' // with this string we close a block of code
+                },
+            }
+          }
         },
+
+        replace: {
+          example: {
+            src: ['app/css/style.css',],             // source files array (supports minimatch)
+            dest: 'app/css/style.t4.css',             // destination directory or file
+            replacements: [{
+              from: '../img/logo-b-l.png',                   // string replacement
+              to: '<t4 type="media" id="90325" formatter="image/*"/>'
+            },{
+              from: '../img/logo-b-s.png',                   // string replacement
+              to: '<t4 type="media" id="90320" formatter="image/*"/>'
+            }]
+          }
+        },
+
+        concurrent: {
+            watch: {
+                tasks: ['watch', 'compass', 'browserSync'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
+        },
+
 
     });
 
@@ -141,8 +225,13 @@ module.exports = function(grunt) {
     // Images
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    // Clean
-    grunt.loadNpmTasks('grunt-contrib-clean');
+    // html
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-includes');
+
+    // Text Replacements
+    grunt.loadNpmTasks('grunt-devcode');
+    grunt.loadNpmTasks('grunt-text-replace');
    
     // Browser Reload + File Watch
     grunt.loadNpmTasks('grunt-concurrent');
@@ -152,31 +241,15 @@ module.exports = function(grunt) {
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
 
+    grunt.registerTask('init', ['compass','concat','includes:dev']);
+
+    // Run our devleoppment environment
+    grunt.registerTask('dev', ['browserSync','watch']);
+
     // cleans directories, does everything for css, js, and images for deploy
-    grunt.registerTask('prod', ['clean', 'img', 'compass', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('build', ['includes','imagemin', 'compass:dist', 'autoprefixer', 'cmq', 'cssmin', 'concat', 'uglify','includes:build','devcode:dist', 'htmlmin']);
 
-    // runs Sass, autoprefixer, media query combine, and minify
-    grunt.registerTask('css', ['watch:sass']); 
-
-    // combines and minifies js on js changes
-    grunt.registerTask('js', ['watch:js']); 
-
-    // reloads on any html or php changes
-    // you can add more files to watch in the settings
-    grunt.registerTask('reload', ['watch:livereload']); 
-
-    // injects new css into open page on css change
-    grunt.registerTask('sync', ['browserSync']); 
-
-    grunt.registerTask('curse', ['css','reload','sync']);
-
-    // opimizes images in dev and moves them to prod
-    grunt.registerTask('img', ['imagemin']); 
-
-    // deletes all files in build directories (be careful with this one)
-    grunt.registerTask('delete', ['clean']); 
-
-    // compiles sass once
-    grunt.registerTask('default', ['compass', 'autoprefixer', 'cmq', 'cssmin']); 
+    // T4 template tags
+    grunt.registerTask('t4', ['grunt-text-replace']);
 
 };
